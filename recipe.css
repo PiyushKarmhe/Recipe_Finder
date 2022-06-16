@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: blue whitesmoke;
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+    height:95%;
+}
+
+*::-webkit-scrollbar-track {
+    background: whitesmoke;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 20px;
+    border: 3px solid whitesmoke;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+body{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: url(https://images.pexels.com/photos/255501/pexels-photo-255501.jpeg?auto=compress&cs=tinysrgb&w=400);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height:auto;
+    width: 100vw;
+}
+
+header{
+    width:80%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    background-color: yellow;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position:relative;
+    top:50px;
+    right:-20%;
+    gap:12px;
+}
+
+main{
+    margin-top:150px;
+}
+
+h2{
+    color:white;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);  
+    padding: 0px 10px;  
+}
+
+.heading{
+    letter-spacing: 3px;
+    font-size: clamp(15px,2rem,40px);
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.search-head{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+input, .search{
+    background-color: white;
+    padding: 10px;
+    padding:5px;
+    border:none;
+    outline: none;
+    height:30px;
+}
+
+input{
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border: 1.5px solid grey;
+    border-right: none;
+    width:clamp(100px,30vw,400px);
+    padding:2px 10px;
+}
+
+.search{
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    width:85px;
+    font-size: 20px;
+    border: 1.5px solid grey;
+    padding: 3px;
+}
+
+.card{
+    width:200px;
+    min-height:300px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 0.5px solid grey;
+    transition: all 0.3s ease-in-out;
+    background-color: whitesmoke;
+    cursor: pointer;
+    margin:20px;
+}
+
+.card:hover{
+    box-shadow: 5px 5px 20px black;
+    transform: translateX(-5px) translateY(-5px) scale(1.05);
+}
+
+.cardImg{
+    width:200px;
+    height:200px;
+}
+
+.title{
+    text-align: center;
+    border-bottom: 3px solid grey;
+    padding:5px;
+    font-size: 20px;
+    background-color: yellow;
+}
+
+.dis{
+    margin-top: 3px;
+    padding:2px 8px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.cal{
+    padding:2px 8px;
+}
+
+.calv{
+    font-weight: 400;
+}
+
+.cardHolder{
+    margin-top:50px;
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card:focus{
+    position: sticky;
+    width:clamp(200px,90vw,600px);
+    height: clamp(400px,70vw,500px);
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: default;
+    box-shadow: 10px 10px 5px lightblue;
+    top: 100px;
+    z-index: 1;
+}
+
+.card:focus:hover{
+    box-shadow: 10px 10px 5px lightblue;
+    transform: translateX(0px) translateY(0px) scale(1);
+}
+
+.card:focus .cardImg{
+    width:250px;
+    height:250px;
+    border-radius: 5px;
+}
+
+.hid{
+    display:none;
+}
+
+.card:focus .hid{
+    display: block;
+}
+
+ol{
+    margin:10px 20px;
+}
+
+li{
+    margin:5px;
+}
+
+.more{
+    margin-top:10px;
+    height:20px;
+    display:block;
+    cursor: pointer;
+    background-color: yellow;
+    border: 0.5px solid grey;
+    text-align: center;
+    font-weight: 400;
+}
+
+.more:hover{
+    color:blue;
+}
+
+.ingriHead{
+    margin-top: 10px;
+    margin-bottom:5px;
+}
+
+.IngriCount{
+    background-color: blue;
+    border-radius: 10px;
+    padding:2px 6px;
+    color:whitesmoke;
+}
+
+.head{
+    display:flex;
+    justify-content: space-between;
+}
+
+.card:focus .tags-l{
+    padding:20px;
+    display:flex;
+    flex-wrap: wrap;
+    gap:5px;
+}
+
+.tag{
+    font-size: 15px;
+    background-color: orange;
+    border-radius: 5px;
+    padding:2px 6px;
+    color:whitesmoke;
+    margin-left: 5px;
+    margin-top: 5px;
+    height: 20px;
+}
+
+.card:focus .tags-b{
+    display:none;
+}
+
+@media screen and (max-width: 500px){
+    .card:focus .tags-l{
+        display:none;
+    }
+
+    .card:focus .tags-b{
+        padding:20px;
+        display:flex;
+        flex-wrap: wrap;
+        gap:5px;
+    }
+}
+
+/* Piyush Karmhe*/
+
+footer{
+    margin:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:15px;
+    color:white;
+    font-family: "Poppins", sans-serif;
+}
+
+footer h3 a{
+    text-decoration: none;
+    color:yellow;
+}
+
+footer h3 a:hover{
+    color:blue;
+}
