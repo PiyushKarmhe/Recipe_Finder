@@ -4,14 +4,23 @@ const button = document.querySelector(".search");
 const input = document.querySelector("input");
 const cardsHolder = document.querySelector(".cardHolder");
 const h2 = document.querySelector("h2");
+const loader = document.querySelector("#loader");
+
+const loading = (state)=>{
+    loader.style=`display:${state==true? 'block':'none'}`;
+}
 
 const getRecipe = async (query)=>{
     try{
         cardsHolder.innerHTML="";
+        cardsHolder.appendChild(loader);
+        loading(true);
+        console.log(loader);
         const endPoint = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${app_id}&app_key=${app_key}`;
         const res = await fetch(endPoint);
         const data = await res.json();
         console.log(data.hits[1].recipe);
+        loading(false);
         h2.innerHTML=`Look what Recipies we found for "${query}"`;
         data.hits.map(cards=>{
             cards = cards.recipe;
