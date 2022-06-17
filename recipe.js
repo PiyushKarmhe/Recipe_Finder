@@ -15,13 +15,12 @@ const getRecipe = async (query)=>{
         cardsHolder.innerHTML="";
         cardsHolder.appendChild(loader);
         loading(true);
-        console.log(loader);
         const endPoint = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${app_id}&app_key=${app_key}`;
         const res = await fetch(endPoint);
         const data = await res.json();
         console.log(data.hits[1].recipe);
         loading(false);
-        h2.innerHTML=`Look what Recipies we found for "${query}"`;
+        h2.innerHTML=`Look what Recipies we found for <span class="highlight">"${query}"</span>`;
         data.hits.map(cards=>{
             cards = cards.recipe;
             console.log(cards);
@@ -62,7 +61,7 @@ const getRecipe = async (query)=>{
 
             const cal = document.createElement("h4");
             cal.classList.add("cal");
-            cal.innerHTML = `Calories : <span class="calv">${cards.calories}</span>`;
+            cal.innerHTML = `Calories : <span class="calv">${cards.calories.toFixed(0)}</span>`;
             card.appendChild(cal);
 
             const hid_cal_1 = document.createElement("h4");
@@ -116,7 +115,7 @@ const getRecipe = async (query)=>{
     catch (err) {
         console.log(err);
         loading(false);
-        h2.innerHTML=`Sorry!! unable to complete your request for "${query}"`;
+        h2.innerHTML=`<span class="highlight">Sorry!!</span> unable to complete your request for "${query}"`;
     }
 }
 
