@@ -35,7 +35,7 @@ body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height:auto;
+    min-height:100vh;
     width: 100vw;
 }
 
@@ -290,4 +290,57 @@ footer h3 a{
 
 footer h3 a:hover{
     color:blue;
+}
+
+/* Loader */
+
+#loader{
+    display:none;
+}
+
+svg {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  display: inline-block;
+}
+
+#loader h1 {
+  text-align: center;
+  color: #fff;
+  margin: 0 0 100px;
+  font-size: 34px;
+  font-weight: 100;
+  text-transform: uppercase;
+  background-color: #e43725;
+  padding: 20px 0;
+}
+
+#loader h1 b {
+  font-weight: 700;
+}
+
+.made-with-love {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
+}
+
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.made-with-love a:hover {
+  text-decoration: underline;
 }
