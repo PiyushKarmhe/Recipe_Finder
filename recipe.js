@@ -115,6 +115,8 @@ const getRecipe = async (query)=>{
     }
     catch (err) {
         console.log(err);
+        loading(false);
+        h2.innerHTML=`Sorry!! unable to complete your request for "${query}"`;
     }
 }
 
